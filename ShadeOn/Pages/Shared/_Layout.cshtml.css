@@ -1,48 +1,259 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color:var(--black);
+  
+}
+nav {
+    background-color: black;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    position: relative;
+}
+
+.navbar-button {
+    display: none;
+}
+
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    width: 30px;
+    text-align: center;
+    margin-top: 20px;
 }
 
-a {
-  color: #0077cc;
+.nav-menu {
+    width: 60%;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    .nav-menu ul li {
+        list-style: none;
+        float: left;
+        padding: 10px;
+        margin: 0 20px;
+    }
+
+    .nav-menu ul:nth-child(2) li {
+        position: relative;
+        top: -8px;
+        left: 140px;
+        color: #757575;
+    }
+
+    .nav-menu ul li a {
+        text-decoration: none;
+        color: #747575;
+    }
+
+        .nav-menu ul li a:hover {
+            color: #00ffff;
+        }
+
+
+.navbar-container form {
+    position: relative;
+    width: 60%;
+    left: 25%;
+    top: 65px;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+    .navbar-container form input {
+        width: 90%;
+        position: relative;
+        /*top: -45px;*/
+        padding: 10px 0px;
+        /*border: none;
+        outline: none;*/
+        /*transform: scaleX(1.5);
+        transform-origin: right;*/
+        transition: .5s;
+        border-bottom: 1px solid #e5e5e5;
+    }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+        .navbar-container form input::placeholder {
+            font-size: 20px;
+        }.navbar-container form input.expand {
+            transform: scaleX(1);
+            padding: 10px;
+        } 
+         .navbar-container form input.expand ~ .fa-search {
+                visibility: hidden;
+            }
+            .navbar-container form input.expand ~ .fa-times {
+                display: block;
+            } .navbar-container form .fa {
+        position: absolute;
+        top: -40px;
+        right: 40px;
+        cursor: pointer;
+        color: #757575;
+    }
+/*
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+        
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
+        
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+           
+
+
+   
+
+.fa-times {
+    display: none;
+}*/
+
+
+@media(max-width: 768px) {
+    .navbar button {
+        display: block;
+        width: 30px;
+        height: 25px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: #757575;
+    }
+
+        .navbar button:before,
+        .navbar button:after {
+            position: absolute;
+            content: '';
+            background: white;
+            width: 30px;
+            height: 5px;
+            top: 5px;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        .navbar button:after {
+            top: 15px;
+        }
+
+        .navbar button.expand-icon {
+            background: transparent;
+        }
+
+            .navbar button.expand-icon:before,
+            .navbar button.expand-icon:after {
+                transform: rotate(45deg);
+                background: #757575;
+                top: 10px;
+            }
+
+            .navbar button.expand-icon:after {
+                transform: rotate(-45deg);
+            }
+
+    .navbar .navbar-brand {
+        font-size: 17px;
+        left: 22%;
+    }
+
+    .navbar .nav-menu {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        background: white;
+        top: 80px;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+        .navbar .nav-menu.expand-mobile {
+            height: 700px;
+        }
+
+        .navbar .nav-menu ul li {
+            float: right;
+            width: 90%;
+            text-align: left;
+        }
+
+    .navbar form {
+        left: 30%;
+        width: 65%;
+    }
+
+    .navbar .nav-menu ul:nth-child(2) li {
+        top: 0;
+        left: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .btn-primary {
+        color: #fff;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #fff;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
+
+    .border-top {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    button.accept-policy {
+        font-size: 1rem;
+        line-height: inherit;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 60px;
+    }
 }

@@ -1,5 +1,34 @@
+*{
+    padding:0;
+    box-sizing:border-box;
+    margin:0;
+}
+
+
+:root{
+    --black : #000000;
+    --lotion-white: #fcfcfc;
+    --light-silver:#dbd8d8;
+
+    --spanish-gray:#A19c99;
+    --dark-charcoal:#323232;
+}
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+
+
+
+
 html {
   font-size: 14px;
+}
+
+.container{
+    margin: 0 40px;
 }
 
 @media (min-width: 768px) {
