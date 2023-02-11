@@ -1,0 +1,144 @@
+﻿
+img,
+picutre {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.hero-section {
+    display: flex;
+    min-width: 100%;
+    height: 90vh;
+}
+
+.hero-section-content {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    padding-left: 140px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f7f5f2;
+}
+
+    .hero-section-content h2 {
+        font-family: 'Monoton', cursive;
+        color: #bdbbba;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        line-height: 70px;
+        font-weight: 500;
+        font-size: 45px;
+    }
+
+        .hero-section-content h2 span {
+            color: #000000;
+        }
+
+    .hero-section-content button {
+        margin-top: 30px;
+        padding: 15px 15px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+        .hero-section-content button:hover {
+            background-color: transparent;
+            border: 1px solid #000000;
+            color: #bdbbba;
+        }
+
+.vibrate-2 {
+    -webkit-animation: vibrate-2 .3s linear 3 both;
+    animation: vibrate-2 .3s linear 3 both
+}
+
+.focus-in-expand {
+    animation: focus-in-expand 3s cubic-bezier(.25,.46,.45,.94) .8s both
+}
+
+.tracking-in-expand {
+    animation: tracking-in-expand 1s cubic-bezier(.215,.61,.355,1.000) both
+}
+
+.hero-section-image {
+    width: 500px;
+    position: relative;
+}
+
+    .hero-section-image .image-caption {
+        position: absolute;
+        top: 40px;
+        left: 45px;
+        font-family: 'Zeyada', cursive;
+        color: aliceblue;
+        font-size: 27px;
+        font-weight: bold;
+    }
+
+
+
+
+@-webkit-keyframes vibrate-2 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0)
+    }
+
+    20% {
+        -webkit-transform: translate(2px,-2px);
+        transform: translate(2px,-2px)
+    }
+
+    40% {
+        -webkit-transform: translate(2px,2px);
+        transform: translate(2px,2px)
+    }
+
+    60% {
+        -webkit-transform: translate(-2px,2px);
+        transform: translate(-2px,2px)
+    }
+
+    80% {
+        -webkit-transform: translate(-2px,-2px);
+        transform: translate(-2px,-2px)
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0)
+    }
+}
+
+
+@keyframes focus-in-expand {
+    0% {
+        letter-spacing: -.5em;
+        filter: blur(12px);
+        opacity: 0
+    }
+
+
+    100% {
+        filter: blur(0);
+        opacity: 1
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -.5em;
+        opacity: 0
+    }
+
+    40% {
+        opacity: .6
+    }
+
+    100% {
+        opacity: 1
+    }
+}
