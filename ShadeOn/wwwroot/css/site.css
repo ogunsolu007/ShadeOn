@@ -10,6 +10,10 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-color:aliceblue;
+}
+
 .container {
     margin: 0 60px;
 }
@@ -133,6 +137,8 @@ html {
     .navbar-container .navbar-button {
         display: none;
     }
+
+
 
 @media(max-width: 768px) {
     .navbar button {
