@@ -4,11 +4,16 @@
 // Write your JavaScript code.
 
 // Add to cart button function
-const cartBtn = document.querySelector('.cart-button')
+const cartBtn = document.querySelectorAll('.cart-button')
 
-cartBtn.addEventListener("click", () => {
-    cartBtn.classList.add("clicked");
+cartBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.add("clicked");
+    })
 })
+
+
+
 
 
 // Video controls script
@@ -92,3 +97,90 @@ volumeSlider.addEventListener("input", () => {
         mute_unmuteBtn.classList.replace("fa-volume-off", "fa-volume-high");
     }
 });
+/////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////
+// Slider
+var indicator = document.getElementsByClassName('indicator-btn')
+var slide = document.getElementById('slide')
+
+indicator[0].onclick = () => {
+    slide.style.transform = 'translateX(0px)';
+    for (i = 0; i < 3; i++) {
+        indicator[i].classList.remove('active')
+    }
+    indicator[0].classList.add("active");
+}
+indicator[1].onclick = () => {
+    slide.style.transform = 'translateX(-800px)';
+    for (i = 0; i < 3; i++) {
+        indicator[i].classList.remove('active')
+    }
+    indicator[1].classList.add("active");
+}
+
+indicator[2].onclick = () => {
+    slide.style.transform = 'translateX(-1600px)';
+    for (i = 0; i < 3; i++) {
+        indicator[i].classList.remove('active')
+    }
+    indicator[2].classList.add("active");
+}
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide-col");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+
+    for (i = 0; i < indicator.length; i++) {
+        indicator[i].className = indicator[i].className.replace(" active", "");
+    }
+
+    indicator[slideIndex - 1].className += " active";
+
+
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+//Admin dashboard tab
+document.getElementByClassName("defaultOpen").click();
+
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+

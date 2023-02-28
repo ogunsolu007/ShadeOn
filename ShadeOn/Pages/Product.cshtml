@@ -1,0 +1,12 @@
+﻿@page "{id}"
+@model ShadeOn.Pages.ProductModel
+@{
+}
+
+<div class="product-desc">
+    <div class="produt-desc-card">
+        <h4 class="product-brand">@Model.product?.Productname</h4>
+        <a asp-area="" asp-page="/Product/@Model.product?.Id">VIEW DETAILS</a>
+        <a class="navbar-brand" asp-area="" asp-page="/Index">ShadeOn</a>
+    </div>
+</div>

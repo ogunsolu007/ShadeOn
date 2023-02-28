@@ -3,9 +3,7 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@section Styles{
-    <link rel="stylesheet" href="~/css/home.css" />
-}
+
 
 
 <section class="hero-section">
@@ -47,20 +45,116 @@
                 </button>
             </div>
         </div>
-
-    </div>
-</section>
-
-<section class="video_sales_promo-section">
-    <div class="video">
-        <video src="videos/My Video.mp4" id="myvideo"></video>
-        <div class="video-timeline">
-            <div class="progress-area">
-                <div class="progress-bar"></div>
+        <div class="product-card">
+            <div class="product-card-image">
+                <img src="images/prada1.jpeg" alt="prada1" />
+            </div>
+            <div class="product-card-details">
+                <div class="product-card-title_price">
+                    <div class="product-desc">
+                        <h4 class="product-brand">prada</h4>
+                        <p>Sunglasssssdfb hfhi udfkf</p>
+                    </div>
+                    <h4 class="product-price">£34</h4>
+                </div>
+                <button class="cart-button">
+                    <span class="add-to-cart">
+                        Add To Cart
+                    </span>
+                    <span class="added">
+                        Added :)
+                    </span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i>
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-card-image">
+                <img src="images/prada1.jpeg" alt="prada1" />
+            </div>
+            <div class="product-card-details">
+                <div class="product-card-title_price">
+                    <div class="product-desc">
+                        <h4 class="product-brand">prada</h4>
+                        <p>Sunglasssssdfb hfhi udfkf</p>
+                    </div>
+                    <h4 class="product-price">£34</h4>
+                </div>
+                <button class="cart-button">
+                    <span class="add-to-cart">
+                        Add To Cart
+                    </span>
+                    <span class="added">
+                        Added :)
+                    </span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i>
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-card-image">
+                <img src="images/prada1.jpeg" alt="prada1" />
+            </div>
+            <div class="product-card-details">
+                <div class="product-card-title_price">
+                    <div class="product-desc">
+                        <h4 class="product-brand">prada</h4>
+                        <p>Sunglasssssdfb hfhi udfkf</p>
+                    </div>
+                    <h4 class="product-price">£34</h4>
+                </div>
+                <button class="cart-button">
+                    <span class="add-to-cart">
+                        Add To Cart
+                    </span>
+                    <span class="added">
+                        Added :)
+                    </span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i>
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-card-image">
+                <img src="images/prada1.jpeg" alt="prada1" />
+            </div>
+            <div class="product-card-details">
+                <div class="product-card-title_price">
+                    <div class="product-desc">
+                        <h4 class="product-brand">prada</h4>
+                        <p>Sunglasssssdfb hfhi udfkf</p>
+                    </div>
+                    <h4 class="product-price">£34</h4>
+                </div>
+                <button class="cart-button">
+                    <span class="add-to-cart">
+                        Add To Cart
+                    </span>
+                    <span class="added">
+                        Added :)
+                    </span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i>
+                </button>
             </div>
         </div>
 
+    </div>
+</section>
+<section class="video_sales_promo-section">
+    <div class="video">
+        <video src="videos/peoplevideo.mp4" id="myvideo"></video>
+
+
         <div class="controls">
+            <div class="video-timeline">
+                <div class="progress-area">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
             <div class="volume-mute">
                 <i class="fa-solid fa-volume-high mute_unmute"></i>
                 <input type="range" min="0" max="1" step="any" class="input-range" />
@@ -78,8 +172,96 @@
         </div>
     </div>
     <div class="sales-promo">
-        <p>hello world how u doing</p>
+        <div class="sales-promo-content">
+            <p>Upto</p>
+            <h3>25% <span>off</span></h3>
+            <h4>Top brands</h4>
+            <button class="sales_btn">Shop Now</button>
+        </div>
     </div>
+</section>
+<section class="testimonial_container">
+    <p class="testimonial-subheading">What Our Client Says</p>
+    <div class="containeer">
+        <div class="indicator">
+            <div class="indicator-btn active"></div>
+            <div class="indicator-btn"></div>
+            <div class="indicator-btn"></div>
+        </div>
+        <div class="testimonial">
+            <div class="slide-row" id="slide">
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>“Wearing these sunglasses make you feel happier!”</p>
+                        <h3>Steve Jobs</h3>
+                        <p>USA</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="~/images/user1.jpg" alt="user1" />
+                    </div>
+                </div>
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>
+                            “They give everything a beautiful filter, great for the hot Australian sun. I would definitely recommend these glasses.”
+
+                        </p>
+                        <h3>Fatima Sanusi</h3>
+                        <p>LONDON</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="~/images/user3.jpg" alt="user3" />
+                    </div>
+                </div>
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>
+                            “I owned various “big brand” sunglasses for years, but everything changed when I got my first pair at ShadeOn”
+                        </p>
+                        <h3>Muhammadu Buhari</h3>
+                        <p>NIGERIA</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="~/images/user2.jpg" alt="user2" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<section class="gram-service">
+    <div class="gram-page">
+        <div>
+            <h3>On the 'gram</h3>
+            <p>#FilterYourWorld</p>
+        </div>
+        <div class="ig-handle">
+            <a href="#">ShadeOn</a>
+            <span class="material-symbols-outlined verify">
+                verified
+            </span>
+        </div>
+    </div>  
+</section>
+
+<section class="service-features">
+   
+        <div>
+            <img src="~/images/secure.png" alt="secure transaction" />
+            <p>Safe and secure checkout</p>
+        </div>
+        <div>
+            <img src="~/images/shipping.png" alt="worldwide shipping" />
+            <p>Worldwide shipping</p>
+        </div>
+        <div>
+            <img src="~/images/bunny.png" alt="bunny" />
+            <p>Great for hangovers</p>
+        </div>
 </section>
 
 

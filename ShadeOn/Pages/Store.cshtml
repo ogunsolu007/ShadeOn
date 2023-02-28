@@ -1,0 +1,39 @@
+﻿@page
+@model ShadeOn.Pages.StoreModel
+@{
+    ViewData["Title"] = "Product Page";
+}
+
+
+
+<div class='product-container'>
+    @foreach (var product in Model.products)
+    {
+        <div class="product-card" >
+            <div class="product-card-image">
+                <img src="@product.Image" alt="" />
+            </div>
+            <div class="product-card-details">
+                <div class="product-card-title_price">
+                    <div class="product-desc">
+                        <h4 class="product-brand">@product.Productname</h4>
+                        <a asp-page="/Product/@product.Id">View More</a>
+                   </div>
+                    <h4 class="product-price">£@product.Price</h4>
+                </div>
+                <button class="cart-button">
+                    <span class="add-to-cart">
+                        Add To Cart
+                    </span>
+                    <span class="added">
+                        Added :)
+                    </span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i>
+                </button>
+            </div>
+        </div>
+    }
+
+
+</div>

@@ -1,0 +1,40 @@
+﻿@page
+@model ShadeOn.Pages.AddProductModel
+@{
+}
+
+
+<section class="addproduct-section">
+    <div class="form-container">
+        <form method="post" class="form">
+            <div class="input-field">
+                <label for="Productname">Product Name</label>
+                <input name="Productname" type="text" id="Productname">
+                <span asp-validation-for="@Model.products.Productname" class="text-danger"></span>
+            </div>
+            <div class="input-field">
+                <label for="Brandname">Brand</label>
+                <input name="Brandname" type="text" id="Productname">
+                <span asp-validation-for="@Model.products.Brandname" class="text-danger"></span>
+            </div>
+            <div class="input-field">
+                <label for="Price">Price</label>
+                <input name="Price" type="number" id="Price">
+                <span asp-validation-for="@Model.products.Price" class="text-danger"></span>
+            </div>
+            <div class="input-field">
+                <label for="Description">Description</label>
+                <textarea name="Description" id="Description" rows="10"></textarea>
+                <span asp-validation-for="@Model.products.Description" class="text-danger"></span>
+            </div>
+            <div class="input-field">
+                <label for="Image">ImageUrl</label>
+                <input name="Image" type="text" id="Image">
+                <span asp-validation-for="@Model.products.Image" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn">Add Product</button>
+        </form>
+    </div>
+
+</section>
