@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ShadeOn.Models;
 
@@ -8,6 +9,12 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<AppDataContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+//builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDataContext>();
+
+builder.Services.AddIdentity<AppUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<AppDataContext>();
+
 
 var app = builder.Build();
 
@@ -23,6 +30,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
 
 app.UseAuthorization();
 
