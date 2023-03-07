@@ -1,51 +1,45 @@
-﻿.product-container {
+﻿.product-details {
+    width: 1000px;
+    margin: 40px auto;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-
-/*Product card styling*/
-
-
-.product-card {
-    width: 200px;
+    justify-content: space-between;
+    row-gap: 20px;
+    padding: 30px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    margin: 20px 10px;
-    cursor:pointer;
 }
 
-    .product-card .product-card-image img {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        border-radius: 10px;
+.product-details-content{
+    padding: 0 40px;
+    
+}
+.product-details-content h3{
+    text-transform:capitalize;
+    margin-bottom:15px;
+}
+.product-details-content h4{
+    margin-bottom:15px;
+}
+.product-details-content h4 span {
+    text-transform:uppercase;
+    font-weight:lighter;
+}
+.product-details-content p {
+    margin-bottom:15px;
+}
+    .product-details-content p.free {
+        text-transform: capitalize;
+        color: #f0c95f;
+        margin-bottom:25px;
+        font-size:14px;
+        font-weight:bold;
     }
 
-    .product-card .product-card-details {
-        padding: 5px;
-    }
+.product-details-content p > span {
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
 
-        .product-card .product-card-details .product-card-title_price {
-            display: flex;
-            justify-content: space-between;
-           
-        }
 
-            .product-card .product-card-details .product-card-title_price h4 {
-                text-transform: capitalize;
-                margin-bottom: 10px;
-            }
-
-            .product-card .product-card-details .product-card-title_price a {
-                color: #bdbbba;
-                font-size: 7px;
-                text-decoration: none;
-            }
 
 
 .cart-button {
@@ -57,10 +51,15 @@
     border-radius: 8px;
     transition: .3s ease;
     overflow: hidden;
-    background: #bdbbba;
+    background: #1338be;
     cursor: pointer;
     outline: none;
     border: none;
+    font-weight:bolder;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
+.cart-button:hover{
+    background-color:black;
 }
 
     .cart-button:active {
@@ -114,6 +113,11 @@
     .cart-button.clicked .added {
         animation: text2 1.5s ease-in-out forwards;
     }
+
+
+
+
+
 
 
 

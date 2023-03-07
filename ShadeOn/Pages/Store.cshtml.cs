@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShadeOn.Models;
 
 namespace ShadeOn.Pages
 {
+
+    [Authorize]
     public class StoreModel : PageModel
     {
 

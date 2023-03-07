@@ -1,0 +1,107 @@
+﻿@page
+@model ShadeOn.Pages.admin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="admin-section">
+
+    <section class="stat-section">
+        <div class="stat-cards">
+            <div>
+                <div>
+                    <h5>1200</h5>
+                    <p>Daily Views</p>
+                </div>
+                <i class="fa-regular fa-eye"></i>
+            </div>
+            <div>
+                <div>
+                    <h5>34000</h5>
+                    <p>Sales</p>
+                </div>
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div>
+                <div>
+                    <h5>200</h5>
+                    <p>Comments</p>
+                </div>
+                <i class="fa-sharp fa-regular fa-comments"></i>
+            </div>
+            <div>
+                <div>
+                    <h5>£25673.98</h5>
+                    <p>Earnings</p>
+                </div>
+                <i class="fa-solid fa-money-bill"></i>
+            </div>
+        </div>
+
+    </section>
+    <button class="create-btn">
+        <a asp-page="Create" style="text-decoration:none;color:white;">Create New</a>
+    </button>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Product[0].Productname)
+                    </th>
+                    <th class="desc">
+                        @Html.DisplayNameFor(model => model.Product[0].Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Product[0].Brandname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Product[0].Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Product[0].Price)
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Product)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Productname)
+                        </td>
+                        <td class="desc">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Brandname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                               Edit
+                            </a>
+                            <br />
+                            <br />
+                            <a asp-page="./Delete" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-trash-can"></i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+</section>

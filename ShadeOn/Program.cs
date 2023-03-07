@@ -5,16 +5,28 @@ using ShadeOn.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+
 
 builder.Services.AddDbContext<AppDataContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 //builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDataContext>();
 
-builder.Services.AddIdentity<AppUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<AppDataContext>();
+//builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDataContext>();
 
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//    .AddRoles<IdentityUser>()
+//    .AddEntityFrameworkStores<AppDataContext>();
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+ .AddDefaultTokenProviders()
+ .AddDefaultUI()
+ .AddEntityFrameworkStores<AppDataContext>();
+
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddRazorPages(o => { o.Conventions.AuthorizeFolder("/"); });
 
 var app = builder.Build();
 
@@ -31,7 +43,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
+app.UseAuthentication();
 
 app.UseAuthorization();
 

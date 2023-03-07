@@ -1,0 +1,76 @@
+﻿@page
+@model ShadeOn.Pages.admin.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="product-details-section">
+    <div class="product-details">
+        <div class="product-details-img">
+            <img src="~/@Model.Product.Image" />
+        </div>
+        <div class="product-details-content">
+            <h3>@Model.Product.Productname</h3>
+            <h4>Brand: <span>@Model.Product.Brandname</span></h4>
+            <h4>£@Model.Product.Price</h4>
+            <p>
+                <span class="desc">
+                    Description
+                </span>
+                <br />
+
+                @Model.Product.Description
+            </p>
+            <p class="free">Free Delivery on orders from 5(pcs)</p>
+
+            <button class="cart-button">
+                <span class="add-to-cart">
+                    Add To Cart
+                </span>
+                <span class="added">
+                    Added :)
+                </span>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-box"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Product?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
+@*<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Productname)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Productname)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Description)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Description)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Brandname)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Brandname)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Image)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Image)z
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Price)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Price)
+    </dd>
+</dl>*@

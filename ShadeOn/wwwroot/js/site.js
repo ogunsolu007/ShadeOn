@@ -160,7 +160,7 @@ function showSlides() {
 
 
 //Admin dashboard tab
-document.getElementByClassName("defaultOpen").click();
+
 
 function openCity(evt, cityName) {
     // Declare all variables
@@ -183,4 +183,8 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
+//window.addonload = function () {
+//    document.getElementById("defaultOpen").click();
+//    console.log("clicked")
+//};
 

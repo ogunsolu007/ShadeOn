@@ -9,7 +9,7 @@
 <div class='product-container'>
     @foreach (var product in Model.products)
     {
-        <div class="product-card" >
+        <div class="product-card">
             <div class="product-card-image">
                 <img src="@product.Image" alt="" />
             </div>
@@ -17,8 +17,10 @@
                 <div class="product-card-title_price">
                     <div class="product-desc">
                         <h4 class="product-brand">@product.Productname</h4>
-                        <a asp-page="/Product/@product.Id">View More</a>
-                   </div>
+                        <a asp-page="/admin/Details" asp-route-id="@product.Id" style="color:black;text-decoration:none; font-size:10px;">
+                            <i class="fa-regular fa-eye"></i> View Product
+                        </a>
+                    </div>
                     <h4 class="product-price">£@product.Price</h4>
                 </div>
                 <button class="cart-button">

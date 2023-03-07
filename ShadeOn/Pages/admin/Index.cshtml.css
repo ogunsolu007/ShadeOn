@@ -1,0 +1,64 @@
+﻿
+
+a{
+    text-decoration:none;
+}
+
+.admin-section{
+   background:aliceblue;
+   padding:30px 60px;
+}
+
+.stat-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .stat-cards > div {
+        background-color: #4c266f;
+        width: 200px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+        color: #ffffff;
+    }
+
+        .stat-cards > div h5 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .stat-cards > div > i {
+            font-size: 25px;
+        }
+
+        .create-btn{
+            background:green;
+            padding: 8px;
+            border-radius:7px;
+            color:black;
+            margin:40px 0 10px;
+            border:none;
+            outline:none;
+        }
+       
+
+table {
+    border: 1px solid black;
+    table-layout: fixed;
+}
+th,
+td {
+    border: 1px solid black;
+    min-width: 100px;
+    overflow: hidden;
+    text-align:center;
+}
+
+.desc{
+    min-width:450px;
+}
