@@ -1,17 +1,27 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using ShadeOn.Models;
 
 namespace ShadeOn.Pages
 {
 
-    [Authorize]
+   
     public class StoreModel : PageModel
     {
 
 
-        public List<Product> products { get; set; }
+        public IList<Product> products { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public SelectList? Brands { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? Brand { get; set; }
 
         private AppDataContext _db;
 
@@ -21,7 +31,25 @@ namespace ShadeOn.Pages
         }
         public void OnGet()
         {
-            products = _db.Products.ToList();
+
+            // using LINQ to get list of brandname in the database
+
+            IQueryable<string> productQuery = from m in _db.Products
+                                            orderby m.Brandname
+                                            select m.Brandname;
+
+
+
+            var product = from m in _db.Products
+                          select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                product = product.Where(s => s.Description.Contains(SearchString) || s.Productname.Contains(SearchString));
+
+            }
+            //Brandname = new SelectList( productQuery.Distinct().ToList());
+            products = product.ToList();
         }
     }
 }
+

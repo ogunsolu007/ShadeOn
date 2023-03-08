@@ -1,12 +1,27 @@
-﻿@page
+﻿@page "{searchString?}"
 @model ShadeOn.Pages.StoreModel
 @{
     ViewData["Title"] = "Product Page";
 }
 
+<div class="search-box">
+    <form>
+@*        <select asp-for="ProductBrand" asp-items="Model.Brandname">
+            <option value="">All</option>
+        </select>*@
+        <input type="text" id="search" asp-for="SearchString" placeholder="Search for product...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+
+
 
 
 <div class='product-container'>
+    <form >
+     
+       <button type="submit"></button>
+    </form>
     @foreach (var product in Model.products)
     {
         <div class="product-card">
