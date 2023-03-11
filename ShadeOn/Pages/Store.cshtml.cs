@@ -13,7 +13,7 @@ namespace ShadeOn.Pages
     {
 
 
-        public IList<Product> products { get; set; }
+        public IList<Product> Product { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
@@ -47,8 +47,14 @@ namespace ShadeOn.Pages
                 product = product.Where(s => s.Description.Contains(SearchString) || s.Productname.Contains(SearchString));
 
             }
-            //Brandname = new SelectList( productQuery.Distinct().ToList());
-            products = product.ToList();
+            if (!string.IsNullOrEmpty(Brand))
+            {
+                product = product.Where(x => x.Brandname == Brand);
+
+            }
+
+            Brands = new SelectList( productQuery.Distinct().ToList());
+            Product = product.ToList();
         }
     }
 }

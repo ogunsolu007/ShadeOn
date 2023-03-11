@@ -6,9 +6,9 @@
 
 <div class="search-box">
     <form>
-@*        <select asp-for="ProductBrand" asp-items="Model.Brandname">
+        <select asp-for="Brand" asp-items="Model.Brands">
             <option value="">All</option>
-        </select>*@
+        </select>
         <input type="text" id="search" asp-for="SearchString" placeholder="Search for product...">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
@@ -18,11 +18,11 @@
 
 
 <div class='product-container'>
-    <form >
-     
-       <button type="submit"></button>
+    <form>
+
+        <button type="submit"></button>
     </form>
-    @foreach (var product in Model.products)
+    @foreach (var product in Model.Product)
     {
         <div class="product-card">
             <div class="product-card-image">

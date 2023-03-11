@@ -188,3 +188,6 @@ function openCity(evt, cityName) {
 //    console.log("clicked")
 //};
 
+
+
+

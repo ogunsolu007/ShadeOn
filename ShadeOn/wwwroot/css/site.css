@@ -1,8 +1,78 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
+.user-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+    .user-img img {
+        height: 100%;
+        width: 400px;
+        display: block;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+.row {
+    border-radius: 10px;
+    width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
+
+.crud-heading {
+    text-align: center;
+    margin:10px 0;
+}
+
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+    .form-group label {
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 18px
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        outline: none
+    }
+
+        .form-group input:focus {
+            border: 1px solid black;
+        }
+
+    .form-group .btn {
+        background: #4c266f;
+        cursor: pointer;
+        width: 100px;
+        border: none;
+        border-radius: 10px;
+        color: aliceblue;
+        text-transform: uppercase;
+        float: right;
+    }
+
+.col-md-4 {
+    width: 70%;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
 
 .search-box {
     width: 500px;
@@ -108,6 +178,7 @@ body {
         .navbar-container .nav-menu .nav-menu-2 li {
             margin: 0 6px;
         }
+
             .navbar-container .nav-menu .nav-menu-2 li .nav-cart {
                 position: relative;
                 cursor: pointer;
@@ -434,3 +505,19 @@ html {
             font-size: 34px;
             font-weight: bolder;
         }
+
+
+.hero-section-content a {
+    margin-top: 30px;
+    padding: 15px 15px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    .hero-section-content a.btn:hover {
+        background-color: transparent;
+        border: 1px solid #000000;
+        color: #bdbbba;
+    }
