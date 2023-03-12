@@ -12,6 +12,8 @@ UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 //builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDataContext>();
 
+//builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDataContext>();
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
 .AddDefaultTokenProviders()

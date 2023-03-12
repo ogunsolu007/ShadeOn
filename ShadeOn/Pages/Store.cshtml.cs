@@ -55,7 +55,7 @@ namespace ShadeOn.Pages
 
             Brands = new SelectList( productQuery.Distinct().ToList());
             Product = product.ToList();
-        }
+         }
     }
 }
 

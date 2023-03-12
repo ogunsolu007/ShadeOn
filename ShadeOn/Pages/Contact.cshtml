@@ -2,4 +2,85 @@
 @model ShadeOn.Pages.ContactModel
 @{
 }
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
 
+
+<section class="contact-us">
+    <div class="contact-container">
+        <div class="contact-form">
+
+            <form class="form">
+                <h3>Contact Us</h3>
+                <div>
+                    <label asp-for="FullName">Full Name</label>
+                    <input asp-for="FullName" aria-required="true" placeholder="First Name" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" aria-required="true" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Message">Message</label>
+                    <textarea asp-for="Message" placeholder="Message"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn">Send Messsage</button>
+            </form>
+        </div>
+        <div class="map" id="map">
+        </div>
+    </div>
+
+    <div class="contact-icons">
+        <div>
+            <i class="fa-solid fa-location-pin"></i>
+            <p>
+                <span>Address:</span>
+                Peverell Hall Nottingham Trent U, Clifton Ln, Clifton, Nottingham NG11 8NS
+            </p>
+        </div>
+        <div>
+            <i class="fa-solid fa-phone"></i>
+            <p>
+                <span>Phone:</span>
+                +44 90745889409
+            </p>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <p>
+                <span>Email:</span>
+               Customercare@gmail.com
+            </p>
+        </div>
+        <div>
+            <i class="fa-solid fa-earth-africa"></i>
+            <p>
+                <span>Website:</span>
+                Customercare@gmail.com
+            </p>
+        </div>
+    </div>
+
+</section>
+
+
+<script>
+
+    var map = L.map('map').setView([52.9125, 1.1840], 14);
+    var marker = L.marker([52.9125, 1.1840]).addTo(map);
+
+    marker.bindPopup("<b>Hello world!</b><br>Find us here.").openPopup();
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+</script>

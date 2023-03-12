@@ -30,16 +30,13 @@ namespace ShadeOn.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<AppUser> userManager,
             IUserStore<AppUser> userStore,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager
-            )
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -47,7 +44,6 @@ namespace ShadeOn.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -75,6 +71,7 @@ namespace ShadeOn.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+
             public string FirstName { get; set; }
 
             public string LastName { get; set; }
@@ -120,37 +117,21 @@ namespace ShadeOn.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                var user = new AppUser
+                {
+                    UserName = Input.FirstName,
+                    Email = Input.Email,
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName
+                };
 
-                user.FirstName = Input.FirstName;
-                user.LastName = Input.LastName;
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.FirstName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                if(!await _roleManager.RoleExistsAsync(SD.AdminRole))
-                {
-                    _roleManager.CreateAsync(new IdentityRole(SD.AdminRole)).GetAwaiter().GetResult();
-                    _roleManager.CreateAsync(new IdentityRole(SD.JuniorAdminRole)).GetAwaiter().GetResult();
-                    _roleManager.CreateAsync(new IdentityRole(SD.CustomerRole)).GetAwaiter().GetResult();
-                }
+
                 if (result.Succeeded)
                 {
-                    string role = Request.Form["rdUserRole"].ToString();
-                    if(role == SD.JuniorAdminRole) { 
-                        await _userManager.AddToRoleAsync(user,SD.JuniorAdminRole);
-                    }
-                    else
-                    {
-                        if (role == SD.AdminRole)
-                        {
-                            await _userManager.AddToRoleAsync(user, SD.AdminRole);
-                        }
-                        else
-                        {
-                            await _userManager.AddToRoleAsync(user, SD.CustomerRole);
-                        }
-                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);

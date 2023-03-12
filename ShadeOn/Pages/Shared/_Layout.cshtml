@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;500;700&family=Zeyada&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9cb4d82a7a.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
@@ -39,7 +40,7 @@
                                 <span>1</span>
                             </div>
                         </li>
-                       <partial name="_loginPartial"/>
+                        <partial name="_loginPartial" />
                         <li class="nav-item dropdown">
                             <a class="nav-link " asp-area="" asp-page="/form">
                                 <i class="fa fa-user"></i>
@@ -88,4 +89,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
