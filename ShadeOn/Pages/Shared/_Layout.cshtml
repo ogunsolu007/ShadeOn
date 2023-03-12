@@ -40,13 +40,14 @@
                                 <span>1</span>
                             </div>
                         </li>
-                        <partial name="_loginPartial" />
+                      
                         <li class="nav-item dropdown">
                             <a class="nav-link " asp-area="" asp-page="/form">
                                 <i class="fa fa-user"></i>
                             </a>
+
                             <div class="dropdown-content">
-                                <a href="#">User Login</a>
+                                <partial name="_loginPartial" />
                                 <a class="nav-link" asp-area="" asp-page="/admin/index">Admin</a>
                             </div>
                         </li>
