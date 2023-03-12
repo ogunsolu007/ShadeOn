@@ -10,7 +10,7 @@ using ShadeOn.Models;
 
 namespace ShadeOn.Pages.admin
 {
-   
+    [AllowAnonymous]
     public class DetailsModel : PageModel
     {
         private readonly ShadeOn.Models.AppDataContext _context;

@@ -23,7 +23,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddRazorPages(o=> { o.Conventions.AuthorizeFolder("/"); });
+builder.Services.AddRazorPages(o=> { o.Conventions.AuthorizeFolder("/Admin"); });
 
 var app = builder.Build();
 
