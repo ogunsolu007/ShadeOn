@@ -6,11 +6,16 @@
 
 <div class="search-box">
     <form>
-        <select asp-for="Brand" asp-items="Model.Brands">
-            <option value="">All</option>
-        </select>
         <input type="text" id="search" asp-for="SearchString" placeholder="Search for product...">
         <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+
+<div class="filter-box" >
+    <form>
+        <select asp-for="Brand" asp-items="Model.Brands" onchange="this.form.submit()">
+            <option value="">filter by Brand</option>
+        </select>
     </form>
 </div>
 
